@@ -40,6 +40,12 @@
       rel="stylesheet"
     />
 
+    <!-- animation -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       .sora-font {
         font-family: "Sora", serif;
@@ -53,9 +59,55 @@
       .btn-color {
         color: #ffdc26;
       }
-      .abc {
-        display: flex;
+      .animation {
+        width: 1250px;
       }
+      .animation h1 {
+        font-size: 54px;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typewriter 2s steps(19) infinite alternate,
+          blink 800ms steps(19) infinite normal;
+        border-right: 5px solid black;
+        font-family: "ADLaM Display", serif;
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0%;
+        }
+
+        to {
+          width: 50%;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          border-color: black;
+        }
+
+        to {
+          border-color: transparent;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        body {
+          .animation {
+            width: 800px;
+          }
+          .animation h1 {
+            font-size: 32px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typewriter 2s steps(19) infinite alternate,
+              blink 800ms steps(19) infinite normal;
+            border-right: 5px solid black;
+            font-family: "ADLaM Display", serif;
+          }
+        }
+      }
+      /**/
     </style>
   </head>
   <body class="sora-font">
@@ -75,7 +127,7 @@
               <li><a>Contact us</a></li>
             </ul>
           </div>
-          <div class="navbar-end space-x-4 lg:inline hidden">
+          <div class="navbar-end space-x-4 invisible md:visible">
             <a class="text-2xl" href=""><i class="fa-solid fa-bell"></i></a>
             <a class="text-2xl" href=""
               ><i class="fa-solid fa-magnifying-glass"></i
@@ -87,8 +139,8 @@
             >
           </div>
 
-          <div class="dropdown lg:hidden ml-32">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <div class="dropdown visible md:invisible">
+            <div tabindex="0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -104,14 +156,6 @@
                 />
               </svg>
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li><a>Find a pet</a></li>
-              <li><a>Breeds</a></li>
-              <li><a>Contact us</a></li>
-            </ul>
           </div>
         </div>
       </nav>
@@ -121,9 +165,9 @@
         <div class="flex flex-col">
           <!-- bannar content -->
           <div class="md:absolute md:top-50 z-10 max-w-xl mt-10 p-4">
-            <h1 class="text-3xl md:text-5xl adlam-font mb-5 leading-normal">
-              Pamper Your Pet, Because They Deserve the Bes
-            </h1>
+            <div class="animation">
+              <h1>Welcome Our Website</h1>
+            </div>
             <p class="text-xl py-6 leading-9">
               Discover a world of treats, toys, and essentials handpicked for
               your furry friends. Shop now and make tails wag with joy!
@@ -149,7 +193,7 @@
           <h3 class="text-4xl text-center adlam-font">Browse By Categories</h3>
           <!-- All catagory card -->
           <div
-            class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-hidden mt-16"
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-hidden mt-16 mx-5 md:mx-0"
           >
             <!-- card 1 -->
             <div class="card bg-[#F9DF8A] shadow-xl">
@@ -250,15 +294,48 @@
         </div>
       </section>
 
+      <!-- Top Selling -->
+      <section class="container mx-auto bg-[#F9DF8A] md:p-12 mb-20 rounded-lg">
+        <div class="hero">
+          <div class="hero-content flex-col lg:flex-row-reverse gap-20">
+            <img
+              src="c1-assets/bestcat.jpeg"
+              class="max-w-sm rounded-lg shadow-2xl"
+            />
+            <div>
+              <h1 class="text-5xl font-bold adlam-font">
+                Oure Best Selling Cat
+              </h1>
+              <p class="py-6 max-w-full">
+                Like Domestic Shorthair cats, Domestic Longhair cats have long
+                hair and are of unknown ancestry. They’re especially common for
+                this reason—most cats aren’t purebreds! Also, like their
+                shorthaired friends, they were brought to North America from
+                Europe via ships. These cats come in a full spectrum of colors,
+                from orange to white and black to grey. Their coat is typically
+                a few inches long, and they have distinct tufts around their
+                ears and on the bottoms of their paws. Domestic Longhair cats
+                benefit from regular grooming to help maintain their lovely
+                coats. Their exact history is a mystery, but some speculate the
+                recessive gene for long hair was pruned specifically by people
+                with cats in colder climates like Russia, Iran, and Turkey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Product Section -->
       <section class="bg-[#FFF9F4]">
         <div class="container mx-auto mb-20 py-32">
-          <h3 class="text-4xl adlam-font mb-7">Browse By Categories</h3>
+          <h3 class="text-4xl adlam-font mb-7 ml-4 md:ml-0">
+            Browse By Categories
+          </h3>
 
-          <div class="flex flex-col lg:flex-row p-3 lg:p-0 gap-3">
+          <div class="flex flex-col lg:flex-row p-4 lg:p-0 gap-8">
             <!-- letf card -->
             <div
-              class="bg-[#F9DF8A] p-6 max-w-sm h-96 relative rounded-lg row-span-3"
+              class="bg-[#F9DF8A] p-6 max-w-[424px] h-96 relative rounded-lg row-span-3 w-full"
             >
               <div class="">
                 <h1 class="text-xl font-semibold">T- Shirt For Dogs</h1>
@@ -274,10 +351,10 @@
             </div>
 
             <!-- right area -->
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full flex-1">
               <!-- right card 1-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -297,7 +374,7 @@
 
               <!-- right card 2-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -317,7 +394,7 @@
 
               <!-- right card 3-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -337,7 +414,7 @@
 
               <!-- right card 4-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -357,7 +434,7 @@
 
               <!-- right card 5-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -377,7 +454,7 @@
 
               <!-- right card 6-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -397,7 +474,7 @@
 
               <!-- right card 7-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -417,7 +494,7 @@
 
               <!-- right card 8-->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -436,7 +513,7 @@
               </div>
               <!-- right card 9 -->
               <div
-                class="flex gap-3 bg-white shadow p-3 items-center w-52 product_card rounded-lg"
+                class="flex gap-3 bg-white shadow p-3 items-center product_card rounded-lg"
               >
                 <img
                   class="bg-[#FFF9F4] p-4"
@@ -459,10 +536,112 @@
       </section>
 
       <!-- Price Section -->
-       
+      <section class="container mx-auto md:my-32">
+        <div class="flex md:flex-row flex-col gap-8 mx-4 md:mx-0">
+          <!-- left side price -->
+          <div
+            class="bg-gradient-to-r from-[#F8CCFB] to-[#ACD2FD] flex items-center rounded-lg"
+          >
+            <div class="space-y-5 py-10 px-7 md:py-24 md:px-20">
+              <h6 class="hidden md:block text-xl">Under Price</h6>
+              <h3 class="text-xl md:text-3xl adlam-font">Pet Grooming Mitt</h3>
+              <p class="text-3xl hidden md:block adlam-font text-white">
+                (Easy Hair Removal)
+              </p>
+              <h1 class="text-4xl md:text-6xl adlam-font">$7.99</h1>
+            </div>
+            <div>
+              <img src="c1-assets/cute-dog-mid.png" alt="" />
+            </div>
+          </div>
+          <!-- right side price -->
+          <div
+            class="bg-gradient-to-r from-[#FFF9F4] to-[#F9DF8A] p-8 md:p-24 rounded-lg mb-32 md:mb-0"
+          >
+            <h3 class="text-2xl lgtext-3xl adlam-font mb-5">
+              T-Shirt for Dogs
+            </h3>
+            <p class="text-4xl md:text-6xl adlam-font text-orange-400">$7.99</p>
+            <img
+              class="pl-7 md:ml-24 w-full"
+              src="c1-assets/cute-pet-mid.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer Section -->
-    <footer></footer>
+    <footer class="mt-80 mb-96">
+      <!-- Subscribe Section -->
+      <section class="container mx-auto relative">
+        <div class="absolute -top-96 md:-top-40 left-0 md:w-full z-10">
+          <div class="hero bg-[#FFF9F4] md:w-full w-11/12 mx-auto rounded-lg">
+            <div class="hero-content flex-col lg:flex-row gap-5">
+              <img
+                src="c1-assets/cute-pet-mid.png"
+                class="max-w-sm rounded-lg"
+              />
+              <div class="text-center">
+                <h1 class="text-4xl adlam-font">Get Pawsome News!</h1>
+                <p class="py-6">
+                  Exclusive training tips, ticks, product deals and more.
+                </p>
+                <input
+                  type="text"
+                  placeholder="Enter Eamil"
+                  class="input w-full max-w-xs"
+                />
+                <br /><br />
+                <button class="btn btn-warning">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer Section -->
+      <section class="bg-[#FFED93] relative">
+        <footer
+          class="footer text-base-content pt-96 pb-8 container mx-auto justify-between px-4 md:px-0"
+        >
+          <div class="max-w-sm">
+            <div class="flex gap-5 items-center mb-8">
+              <img src="c1-assets/logo-footer.png" alt="" />
+              <h3 class="text-xl">
+                Browse <span class="text-yellow-400">4</span> Pets
+              </h3>
+            </div>
+            <p>
+              Discover a world of treats, toys, and essentials handpicked for
+              your furry friends
+            </p>
+          </div>
+          <nav class="space-y-5 text-xl">
+            <a class="link link-hover">Find a pet</a>
+            <a class="link link-hover">Breeds</a>
+            <a class="link link-hover">Contact Us</a>
+          </nav>
+          <nav class="md:mt-16">
+            <h6 class="footer-title">Follow US</h6>
+            <div class="grid grid-flow-col gap-4 items-center text-3xl">
+              <a href="">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+          </nav>
+        </footer>
+      </section>
+    </footer>
   </body>
 </html>
