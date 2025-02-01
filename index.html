@@ -60,10 +60,9 @@
         color: #ffdc26;
       }
       .animation {
-        width: 1250px;
       }
       .animation h1 {
-        font-size: 54px;
+        font-size: 45px;
         white-space: nowrap;
         overflow: hidden;
         animation: typewriter 2s steps(19) infinite alternate,
@@ -78,7 +77,7 @@
         }
 
         to {
-          width: 50%;
+          width: 100%;
         }
       }
 
@@ -93,9 +92,6 @@
       }
       @media screen and (max-width: 600px) {
         body {
-          .animation {
-            width: 800px;
-          }
           .animation h1 {
             font-size: 32px;
             white-space: nowrap;
@@ -164,13 +160,14 @@
       <div class="container mx-auto mt-10">
         <div class="flex flex-col">
           <!-- bannar content -->
-          <div class="md:absolute md:top-50 z-10 max-w-xl mt-10 p-4">
-            <div class="animation">
+          <div class="md:absolute md:top-50 z-10 mt-10 p-4">
+            <div class="animation w-xl border border-red-300">
               <h1>Welcome Our Website</h1>
             </div>
-            <p class="text-xl py-6 leading-9">
-              Discover a world of treats, toys, and essentials handpicked for
-              your furry friends. Shop now and make tails wag with joy!
+            <p class="text-xl py-6 leading-9 max-96:">
+              Discover a world of treats, toys, <br />
+              and essentials handpicked for your furry friends. Shop now <br />
+              and make tails wag with joy!
             </p>
             <a
               class="btn hover:bg-[#FFDC26] bg-[#FFDC26] border border-amber-400 text-xl"
@@ -573,7 +570,7 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="mt-80 mb-96">
+    <footer class="mt-80 mb-96 md:mb-7">
       <!-- Subscribe Section -->
       <section class="container mx-auto relative">
         <div class="absolute -top-96 md:-top-40 left-0 md:w-full z-10">
